@@ -22,8 +22,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity Automat is
     PORT(I : in std_logic_vector(4 downto 0);--+10, +5, +1, produs, rest 
@@ -50,7 +48,6 @@ present_state_logic : process (state, clk, I)
     begin
  if (reset = '1') then 
         state <= s0;
---        next_state <= s0;
         waiting <= 0;
     else 
         if (rising_edge(clk)) then
